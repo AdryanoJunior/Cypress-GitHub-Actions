@@ -2,7 +2,7 @@ class MyAccountPage {
 
     selectorsList() {
         const selectors = {
-            sectionTitleAccount: "[title='My account']",
+            sectionTitleAccount: '.page-title',
         }
         return selectors
     }

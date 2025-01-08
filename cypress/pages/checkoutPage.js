@@ -11,6 +11,7 @@ class CheckoutPage {
             selectState: "[aria-autocomplete='list']", 
             validateState: ".validate-state",
             phoneField: '#billing_phone',
+            emailField: '#billing_email',
             commentsField: '#order_comments',
             termField: '#terms',
             placeOrderButton: '#place_order'
@@ -31,9 +32,10 @@ class CheckoutPage {
         cy.get(this.selectorsList().selectState).type('Bahia')
         cy.get(this.selectorsList().validateState).click()
     }
-    fillPersonalData(phone) {
+    fillPersonalData(phone, email) {
         cy.get(this.selectorsList().postcodeField).clear().type('01521-020')
         cy.get(this.selectorsList().phoneField).clear().type(phone)
+        cy.get(this.selectorsList().emailField).clear().type(email)
     }
     additionalInformation() {
         cy.get(this.selectorsList().commentsField).type('Deixar o pedido na Portaria')

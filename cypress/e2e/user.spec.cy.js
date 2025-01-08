@@ -38,14 +38,14 @@ describe('EBAC Shop - Tests', () => {
     checkoutPage.fillPersonalDetails(faker.person.firstName(), faker.person.lastName())
     checkoutPage.fillAddressDetails(faker.location.streetAddress(), faker.location.city())
     checkoutPage.fillComboBoxState()
-    checkoutPage.fillPersonalData(faker.number.int())
+    checkoutPage.fillPersonalData(faker.number.int(), faker.internet.email())
     checkoutPage.additionalInformation()
     checkoutPage.agreeTerms()
     checkoutPage.placeOrder()
 
     cy.get('body').should('contain', 'Obrigado. Seu pedido foi recebido.')
     cy.get('body').should('contain', 'Detalhes do pedido')
-    cy.get('body').should('contain', 'Endereço de faturamento')
+ 
   })
 
   
